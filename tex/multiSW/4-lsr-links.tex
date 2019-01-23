@@ -1,0 +1,43 @@
+\section{Linking \emph{lemonUby} to lexical-semantic resources}
+
+As UBY is derived from existing resources the simplest links to create are those
+to other RDF versions of the resources that compose UBY. For WordNet these links 
+are simply created by mapping the data of UBY to the linked data version of 
+WordNet 3.0~\footnote{\url{http://semanticweb.cs.vu.nl/lod/wn30/}}. Here,
+we provided links at both the sense level and at the lexical entry level 
+(lexical entries are ``words'' in WordNet 3.0). We found that this worked apart
+from 7 senses that did not map, which we believe is due to a bug in the 
+WordNet API. 
+
+In addition, we provided links to two existing resources that are also widely
+used, firstly to RDF WordNet 2.0~\cite{van2006conversion}. As the sense identifiers are
+different to the WordNet version used by UBY we only attempted to link at the lexical 
+entry level, using the assumption that the lemmas were the same. Secondly, we 
+linked to the RDF export of Wiktionary~\footnote{\url{http://wiktionary.dbpedia.org}}.
+For this resource, we first linked the WordNet data on the lexical entry level using 
+the lemma and part-of-speech information. This was mostly effective, however some
+elements were initially missing due to category misalignment (Wiktionary has
+``Initialism'' as a part-of-speech, for example for ``IBM'', whereas WordNet
+counts these as nouns); we added manual corrections to compensate 
+for this. Statistics for all mappings are given in table \ref{mapping-stats}.
+
+\begin{table}
+  \begin{tabular}{|l|l|p{3cm}|}
+    \hline
+    Uby Resource & Other Resource & Links (Percentage of Uby resource) \\
+    \hline
+    WordNet & WordNet 3.0 & 206,773 (99.9\%)\\
+    WordNet & WordNet 2.0 & 84,416 (40.8\%) \\
+    WordNet & Wiktionary & 76,294 (36.9\%) \\
+    \hline
+  \end{tabular}
+  \caption{Number of external links created between lemonUby and other resources
+  in the LLOD cloud \label{mapping-stats}}
+\end{table}
+  	  
+  
+
+
+
+
+

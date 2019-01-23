@@ -1,0 +1,198 @@
+#########################################################################################
+# 
+# The resource lemonUBY is made available under a Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license which is available at 
+# http://creativecommons.org/licenses/by-sa/3.0/
+# You are free to share (copy, distribute and transmit) the work, to develop your own extensions (adapt, remix) of the work, 
+# and to make commercial use of the work, provided that you comply with the licenses of all
+# the integrated lexical resources and linkings between them.
+#
+# These licences are listed below.
+# 
+########################################
+# UBY
+########################################
+
+UBY website: http://www.ukp.tu-darmstadt.de/data/lexical-resources/uby/
+
+UBY is made available under a 
+Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license which is available at 
+http://creativecommons.org/licenses/by-sa/3.0/
+You are free to share (copy, distribute and transmit) the work, to develop your own extensions (adapt, remix) of the work, 
+and to make commercial use of the work under the condition that you give attribution along the following lines:  
+
+Iryna Gurevych, Judith Eckle-Kohler, Silvana Hartmann, Michael Matuschek, Christian M. Meyer and Christian Wirth, 2012, 
+Uby - A Large-Scale Unified Lexical-Semantic Resource, 
+Proceedings of the 13th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2012), 
+p. 580-590, Avignon, France.
+
+########################################
+# WordNet
+########################################
+
+WordNet website: http://wordnet.princeton.edu/wordnet/
+WordNet license: http://wordnet.princeton.edu/wordnet/license/
+
+WordNet copyright notice, statements, disclaimer:
+
+WordNet 3.0 Copyright 2006 by Princeton University. All rights reserved. 
+THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND PRINCETON UNIVERSITY MAKES NO REPRESENTATIONS OR 
+WARRANTIES, EXPRESS OR IMPLIED. BY WAY OF EXAMPLE, BUT NOT LIMITATION, PRINCETON UNIVERSITY MAKES NO 
+REPRESENTATIONS OR WARRANTIES OF MERCHANT- ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE 
+USE OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT INFRINGE ANY THIRD PARTY PATENTS, 
+COPYRIGHTS, TRADEMARKS OR OTHER RIGHTS. The name of Princeton University or Princeton may not be used in 
+advertising or publicity pertaining to distribution of the software and/or database. Title to copyright 
+in this software, database and any associated documentation shall at all times remain with Princeton 
+University and LICENSEE agrees to preserve same.
+
+
+########################################
+# WordNet - OmegaWikiDE Alignment
+########################################
+
+The WordNet OmegaWikiDE alignment is made available under a 
+Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license which is available at 
+http://creativecommons.org/licenses/by-sa/3.0/
+You are free to share (copy, distribute and transmit) the work, to develop your own extensions (adapt, remix) of the work, 
+and to make commercial use of the work.
+
+If you use the WordNet - OmegaWikiDE alignment, please cite: 
+Iryna Gurevych, Judith Eckle-Kohler, Silvana Hartmann, Michael Matuschek, Christian M. Meyer and Christian Wirth, 2012, 
+Uby - A Large-Scale Unified Lexical-Semantic Resource, 
+Proceedings of the 13th Conference of the European Chapter of the Association for Computational Linguistics (EACL 2012), 
+p. 580-590, Avignon, France.
+
+
+########################################
+# FrameNet
+########################################
+
+FrameNet Website: https://framenet.icsi.berkeley.edu/fndrupal/home
+FrameNet license: Creative Commons Attribution 3.0 Unported License, see http://creativecommons.org/licenses/by/3.0/
+
+########################################
+# WordNet - FrameNet mapping "MapNet"
+########################################
+
+Source: http://danielepighin.net/cms/research/MapNet	
+
+The WordNet - FrameNet mapping "MapNet" is made available under a Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license which is available at 
+http://creativecommons.org/licenses/by-sa/3.0/
+You are free to share (copy, distribute and transmit) the work, to develop your own extensions (adapt, remix) of the work, 
+and to make commercial use of the work under the condition that you give attribution along the following lines:  
+
+New Features for FrameNet - WordNet Mapping, Sara Tonelli, Daniele Pighin (2009), 
+Proceedings of the Thirteenth Conference on Computational Natural Language Learning (CoNLL-2009) p. 219–227 
+
+
+#############################################
+# WordNet - FrameNet mapping "WordFrameNet"
+#############################################
+
+Source: http://adimen.si.ehu.es/web/WordFrameNet	
+
+The WordNet - FrameNet mapping "WordFrameNet" is made available under a Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license which is available at 
+http://creativecommons.org/licenses/by-sa/3.0/
+You are free to share (copy, distribute and transmit) the work, to develop your own extensions (adapt, remix) of the work, 
+and to make commercial use of the work under the condition that you give attribution along the following lines:  
+
+Laparra E. and Rigau G. Integrating WordNet and FrameNet using a knowledge-based Word Sense Disambiguation algorithm. 
+Proceedings of Recent Advances in Natural Language Processing (RANLP09). Borovets, Bulgaria, September, 2009. 
+
+and
+
+Laparra E. and Rigau G.eXtended WordFrameNet. 
+7th international conference on Language Resources and Evaluation (LREC'10). La Valetta, Malta. 2010.
+
+
+########################################
+# VerbNet and VerbNet - WordNet mapping
+########################################
+
+VerbNet website: http://verbs.colorado.edu/~mpalmer/projects/verbnet.html
+
+VerbNet license:
+
+VerbNet copyright notice, statements, disclaimer:
+THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND THE UNIVERSITY 
+OF COLORADO  MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR
+IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, UNIVERSITY 
+OF COLORADO MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-
+ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE
+OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT
+INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR
+OTHER RIGHTS.
+
+The name of University of Colorado or CU may not be used in
+advertising or publicity pertaining to distribution of the software
+and/or database.  Title to copyright in this software, database and
+any associated documentation shall at all times remain with
+University of Colorado and LICENSEE agrees to preserve same. 
+
+
+Please reference the following document(s) in any description of 
+applications based on VerbNet 3.0 (or 3.X): 
+
+Karin Kipper, Anna Korhonen, Neville Ryant, Martha Palmer, 
+A Large-scale Classification of English Verbs, 
+Language Resources and Evaluation Journal, 42(1), pp. 21-40, 
+Springer Netherland, 2008.
+
+and/or
+
+Karin Kipper Schuler, Anna Korhonen, Susan W. Brown, 
+VerbNet overview, extensions, mappings and apps, Tutorial, NAACL-HLT 2009, Boulder, Colorado.
+
+
+########################################
+# VerbNet - FrameNet mapping (SemLink)
+########################################
+
+Semlink VerbNet - FrameNet mapping: http://verbs.colorado.edu/semlink/semlink1.1/vn-fn/VNclass-FNframeMappings.xml
+
+License: http://verbs.colorado.edu/semlink/semlink1.1/LICENSE.TXT
+
+SemLink Mapping 1.0 License 
+
+This software and database is being provided to you, the LICENSEE, by
+University of Colorado under the following license.  By obtaining, using
+and/or copying this software and database, you agree that you have
+read, understood, and will comply with these terms and conditions.:
+
+Permission to use, copy, modify and distribute this software and
+database and its documentation for any purpose and without fee or
+royalty is hereby granted, provided that you agree to comply with
+the following copyright notice and statements, including the disclaimer,
+and that the same appear on ALL copies of the software, database and
+documentation, including modifications that you make for internal
+use or for distribution.
+
+SemLink Mapping 1.0 License Copyright 2007 by University of Colorado.
+All rights reserved.
+
+THIS SOFTWARE AND DATABASE IS PROVIDED "AS IS" AND UNIVERSITY 
+OF COLORADO  MAKES NO REPRESENTATIONS OR WARRANTIES, EXPRESS OR
+IMPLIED.  BY WAY OF EXAMPLE, BUT NOT LIMITATION, UNIVERSITY 
+OF COLORADO MAKES NO REPRESENTATIONS OR WARRANTIES OF MERCHANT-
+ABILITY OR FITNESS FOR ANY PARTICULAR PURPOSE OR THAT THE USE
+OF THE LICENSED SOFTWARE, DATABASE OR DOCUMENTATION WILL NOT
+INFRINGE ANY THIRD PARTY PATENTS, COPYRIGHTS, TRADEMARKS OR
+OTHER RIGHTS.
+
+The name of University of Colorado or CU may not be used in
+advertising or publicity pertaining to distribution of the software
+and/or database.  Title to copyright in this software, database and
+any associated documentation shall at all times remain with University
+of Colorado and LICENSEE agrees to preserve same.
+
+
+########################################
+# OmegaWiki
+########################################
+
+Content in OmegaWiki is available under two licenses:
+
+    * The GNU Free Documentation License 1.2 or higher, see http://www.gnu.org/copyleft/fdl.html
+    * Creative Commons Attribution License 2.5 or higher, see http://creativecommons.org/licenses/by/2.5/deed.en
+
+
+

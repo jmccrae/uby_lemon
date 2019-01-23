@@ -1,0 +1,112 @@
+%%%%%%%%%%%%%%%% Springer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[graybox]{svmult}
+
+% choose options for [] as required from the list
+% in the Reference Guide
+
+\usepackage{mathptmx}       % selects Times Roman as basic font
+\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+\usepackage{type1cm}        % activate if the above 3 fonts are
+                            % not available on your system
+%
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+% see the list of further useful packages
+% in the Reference Guide
+\usepackage{url}
+\usepackage{array}
+
+\usepackage[utf8]{inputenc} % please use UTF8 encoding
+
+%\usepackage[round]{natbib} % if spbasic is used
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title*{Using \emph{lemonUby} 
+for data integration on the Multilingual Semantic Web}
+ \titlerunning{Using \emph{lemonUby} 
+for multilingual data integration} 
+\author{Judith Eckle-Kohler, Iryna Gurevych, John McCrae and Christian Chiarcos}
+% Use \authorrunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\institute{
+Judith Eckle-Kohler \at Ubiquitous Knowledge Processing Lab  (UKP-TUDA),  
+Technische Universit{\"a}t Darmstadt, Germany, \url{www.ukp.tu-darmstadt.de}
+\and
+Iryna Gurevych \at Ubiquitous Knowledge Processing Lab  (UKP-TUDA),  Technische Universit{\"a}t Darmstadt and
+Ubiquitous Knowledge Processing Lab (UKP-DIPF),
+German Institute for Educational Research and Educational Information, Germany, \url{www.ukp.tu-darmstadt.de},
+\and
+John McCrae \at CITEC, Universit{\"a}t Bielefeld, Germany, \url{jmccrae@cit-ec.uni-bielefeld.de}
+\and
+Christian Chiarcos \at  Information Sciences Institute, University of Southern California, USA, \url{chiarcos@isi.edu}
+ }
+
+%
+% Use the package "url.sty" to avoid
+% problems with special characters
+% used in your e-mail or web address
+%
+\maketitle
+
+\abstract*{Each chapter should be preceded by an abstract (10--15 lines long) that summarizes the content. The abstract will appear \textit{online} at \url{www.SpringerLink.com} and be available with unrestricted access. This allows unregistered users to read the abstract as a teaser for the complete chapter. As a general rule the abstracts will not appear in the printed version of your book unless it is the style of your particular book or that of the series to which your book belongs.
+Please use the 'starred' version of the new Springer \texttt{abstract} command for typesetting the text of the online abstracts (cf. source file of this chapter template \texttt{abstract}) and include them with the source files of your manuscript. Use the plain \texttt{abstract} command if the abstract is also to appear in the printed version of the book.}
+
+\abstract{
+This chapter addresses lexicon-based methods for data integration on the Multilingual Semantic Web.
+It presents use cases of  a new lexical resource integrated in the Semantic Web called 
+\emph{lemonUby} which combines data from the standardized lexical resource UBY with the principled model, \emph{lemon},
+for representing lexical data on the Web. This resource provides not only 
+rich information about many lexical entries in two languages, it is also
+significantly linked both within its component resources and to other
+lexical resources and terminology repositories on the Web. 
+This chapter describes further linkings of \emph{lemonUby}, such as 
+the linking with the MASC corpus. 
+A particular focus are methods for cross-lingual linking of verb senses
+on the fly. We present results for the
+cross-lingual linking of the English VerbNet and two German lexica rich in verbs.
+}
+
+%\emph{lemonUby} contains the English WordNet, FrameNet, VerbNet, Wiktionary and OmegaWiki, and German Wiktionary and OmegaWiki. 
+%It describes models and terminology repositories for lexical resources and
+%introduces methods for  multilingual data integration which are based on these.
+
+
+
+\input{0-intro}
+% \input{1-lemon}
+ \input{2-uby} % UBY-LMF, UBY, mapping of UBY-LMF to lemon
+ %\input{3-conversion} %conversion of UBY resources to lemon
+ %\input{4-lsr-links}
+ \input{5-applications}
+ \input{6-conclusion}
+
+
+\begin{acknowledgement}
+The work on \emph{lemon} was developed in the context of the Monnet project, which is funded by the European Union FP7 program under
+grant number 248458, the CITEC excellence initiative funded by the DFG (Deutsche Forschungsgemeinschaft).
+The work on UBY has been supported by the Volks\-wagen Foundation as part of the Lichtenberg-Professorship Program under grant No.\ I/82806.
+The research of Christian Chiarcos has been supported by the German Academic Exchange Service (DAAD) through a PostDoc fellowship at the University of Southern California.
+We thank Silvana Hartmann, Michael Matuschek and Christian~M. Meyer for their contributions to this work.
+
+\end{acknowledgement}
+
+ \bibliographystyle{spbasic}
+ %\bibliographystyle{spphys}
+ \bibliography{bib}
+
+\end{document}

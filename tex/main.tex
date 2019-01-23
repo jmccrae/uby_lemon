@@ -1,0 +1,167 @@
+% PLEASE USE THIS FILE AS A TEMPLATE
+% Check file iosart2c.tex for more examples
+%
+% Journal:
+%   Journal of Ambient Intelligence and Smart Environments (jaise)
+%   Web Intelligence and Agent Systems: An International Journal (wias)
+%   Semantic Web: Interoperability, Usability, Applicability (SW)
+% IOS Press
+% Latex 2e
+
+% options: jaise|wias|sw
+% add. options: [seceqn,secfloat,secthm,crcready,onecolumn]
+
+
+%\documentclass{iosart2c}
+
+\documentclass[sw]{iosart2c}
+%\documentclass[wias]{iosart2c}
+%\documentclass[jaise]{iosart2c}
+\usepackage{flushend}
+\usepackage[T1]{fontenc}
+\usepackage{times}%
+\usepackage{natbib}
+%\usepackage[dvips]{hyperref}
+\usepackage{amsmath}
+\usepackage{dcolumn}
+%\usepackage{endnotes}
+\usepackage{graphics}
+
+\usepackage{url}
+\usepackage{array}
+
+\usepackage[utf8]{inputenc} % please use UTF8 encoding
+%\usepackage[round]{natbib}
+
+\usepackage{mathptmx}       % selects Times Roman as basic font
+%\usepackage{helvet}         % selects Helvetica as sans-serif font
+\usepackage{courier}        % selects Courier as typewriter font
+%\usepackage{type1cm}        % activate if the above 3 fonts are
+                            % not available on your system
+%
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+%\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+% see the list of further useful packages
+% in the Reference Guide
+
+\usepackage{graphicx}
+
+
+
+\newcommand{\lemon}{\emph{lemon}}
+%\newcommand{\myremark}[2]{{\textbf{\marginpar{$\parallel$}(* \textit{#1:} #2 *)}}}
+%\newcommand{\jmc}[1]{\myremark{John}{#1}}
+%\newcommand{\pc}[1]{\myremark{Philipp}{#1}}
+%\newcommand{\emp}[1]{\myremark{Elena}{#1}}
+%\newcommand{\emp}[1]{\myremark{JEK}{#1}}
+
+\pubyear{0000}
+\volume{0}
+\firstpage{1}
+\lastpage{1}
+
+% choose options for [] as required from the list
+% in the Reference Guide
+
+
+\begin{document}
+
+\newcommand{\imgpath}{.}
+\newcommand{\onto}[1]{\texttt{#1}}
+\newcommand{\word}[1]{\textsl{#1}}
+
+\begin{frontmatter}
+
+%\pretitle{}
+\title{\emph{le\-mon\-U\-by} - a large, interlinked, syntactically-rich lexical resource for ontologies}
+%\runningtitle{Lemon $+$ Uby 4 MLODE-Postproc}
+%\subtitle{}
+
+%\review{}{}{}
+
+% Two or more authors:
+\author[A]{\fnms{Judith} \snm{Eckle-Kohler},\thanks{Corresponding author, http://www.ukp.tu-darmstadt.de}}
+%\thanks{Do not use capitals for the author's surname.}},
+\author[B]{\fnms{John Philip} \snm{M\textsuperscript{c}Crae}}
+and
+\author[C]{\fnms{Christian} \snm{Chiarcos}}
+\runningauthor{Eckle-Kohler et al.}
+\address[A]{Ubiquitous Knowledge Processing (UKP) Lab,  Department of Computer Science,  Technische Universit{\"a}t Darmstadt
+and Information Center for Education, German Institute for International Educational Research, Germany, 
+http://www.ukp.tu-darmstadt.de}
+\address[B]{Cognitive Interaction Technology (CITEC), Semantic Computing Group, Universit\"at Bielefeld, Germany, http://www.sc.cit-ec.uni-bielefeld.de}
+\address[C]{Applied Computational Linguistics (ACoLi), Department of Computer Science and Mathematics, Goethe-University Frankfurt am Main, Germany, 
+http://acoli.cs.uni-frankfurt.de}
+%\address[C]{}}
+%\address[D]{}}
+
+%\institute{John McCrae \at CITEC, Universit\"at Bielefeld, \email{jmccrae@cit-ec.uni-bielefeld.de} \and ...}
+
+%\maketitle
+
+\begin{abstract}
+We introduce \emph{le\-mon\-U\-by}, a new lexical resource integrated in the Semantic Web
+%\footnote{\url{http://www.lemon-model.net/lexica/uby/}}
+which is
+ the result of converting data extracted from the existing large-scale linked lexical resource UBY to
+ the \emph{lemon} lexicon model.
+ The following data from UBY were converted: WordNet, FrameNet, VerbNet,
+English and German Wiktionary, the English and German
+entries of Ome\-ga\-Wi\-ki,
+as well as links between pairs of these lexicons at the word sense level (links between VerbNet and FrameNet,
+VerbNet and WordNet, WordNet and FrameNet, WordNet and Wiktionary, WordNet and German Ome\-ga\-Wiki).
+We linked  \emph{le\-mon\-U\-by} to other lexical resources and linguistic
+terminology repositories in the Linguistic Linked Open Data cloud and outline possible applications of this new dataset.
+
+%Pairs of these resources are linked at the sense level, and in addition, \emph{le\-mon\-U\-by} is
+%first, there are linkings to other lexical resource in the LLOD cloud, and second, we established a linking of
+%POS categories in UBY to -the OLiA reference model. lemonUBY is an important enrichment of the Semantic Web, as it is
+%a resource which is rich in verbs and provides fine-grained linguistic information on verbs.
+% We report on the large-scale population of the \emph{lemon} lexicon model by a subset of UBY lexical resources
+% and describe the resulting data set which we call \emph{lemonUBYlite}.
+% The mapping of the UBY-LMF lexicon model to \emph{lemon} is discussed as well as the actual conversion of
+% UBY lexical resources to \emph{lemon}.
+% Furthermore, two kinds of linkings of \emph{lemonUBYlite} to the LLOD cloud are performed: first,
+% a linking of POS values in \emph{lemonUBYlite} to OLiA, and second, a linking of the \emph{lemonUBYlite} WordNet
+%  to a WordNet in the LLOD cloud.
+\end{abstract}
+
+\begin{keyword}
+Lexicon model\sep lemon\sep UBY-LMF\sep UBY\sep OLiA \sep ISOcat \sep  WordNet \sep VerbNet \sep FrameNet  \sep Wiktionary \sep Ome\-ga\-Wi\-ki
+\end{keyword}
+
+\end{frontmatter}
+
+%%%%%%%%%%% The article body starts:
+
+% \renewcommand{\lemon}{\index{lemon}\emph{lemon}}
+%
+
+\input{1-intro}
+ \input{2-lemon}
+ \input{3-uby} % UBY-LMF, UBY, mapping of UBY-LMF to lemon
+ \input{4-conversion} %conversion of UBY resources to lemon
+ \input{5-links}
+ \input{6-application}
+ \input{7-conclusion}
+
+%\begin{acknowledgement}
+\section*{Acknowledgments}
+The work on \emph{lemon} was developed in the context of the Monnet project, which is funded by the European Union FP7 program under
+grant number 248458, the CITEC excellence initiative funded by the DFG (Deutsche Forschungsgemeinschaft).
+The work on UBY has been supported by the Volks\-wagen Foundation as part of the Lichtenberg-Professorship Program under grant No.\ I/82806.
+The research of Christian Chiarcos has been partially supported by a German Academic Exchange Service (DAAD) funded PostDoc fellowship at the University of Southern California.
+We thank Silvana Hartmann, Sebastian Hellmann, Michael Matuschek, Christian~M. Meyer, and Zijad Maksuti for their contributions to this work.
+Our special thanks go to the three reviewers Tadej \u{S}tajner, Vojt\u{e}ch Sv\'{a}tek and Fabian~M. Suchanek for their
+detailed and valuable feedback.
+%\end{acknowledgement}
+
+% \pagebreak
+%
+ \bibliographystyle{spbasic}
+ \bibliography{main}
+
+\end{document}

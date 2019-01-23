@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE LexicalResource SYSTEM "/home/eckle/UBY_HOME/ubyLmfDTD_0_2_0.dtd">
+<LexicalResource dtdVersion="1_0" name="Uby_OmegaWikideu">
+    <GlobalInformation label="Uby_OW_deu"/>
+    <Lexicon languageIdentifier="deu" id="OW_Lexicon_deu" name="OmegaWikideu">
+        <LexicalEntry id="OW_deu_LexicalEntry_0" lexicon="OW_Lexicon_deu">
+            <Lemma>
+                <FormRepresentation languageIdentifier="deu" writtenForm="dennoch"/>
+            </Lemma>
+            <Sense id="OW_deu_Sense_0" index="318653" synset="OW_deu_Synset_11002" lexicalEntry="OW_deu_LexicalEntry_0">
+                <Definition>
+                    <TextRepresentation languageIdentifier="deu" writtenText="Trotz des vorher Gesagten."/>
+                </Definition>
+                <Equivalent languageIdentifier="por" writtenForm="contudo"/>
+                <Equivalent languageIdentifier="pol" writtenForm="jednakże"/>
+                <Equivalent languageIdentifier="pol" writtenForm="niemniej"/>
+                <Equivalent languageIdentifier="kat" writtenForm="მიუხედავად ამისა"/>
+                <Equivalent languageIdentifier="nld" writtenForm="ondanks dat"/>
+                <Equivalent languageIdentifier="ita" writtenForm="eppure"/>
+                <Equivalent languageIdentifier="nld" writtenForm="desalniettemin"/>
+                <Equivalent languageIdentifier="ita" writtenForm="tuttavia"/>
+                <Equivalent languageIdentifier="fra" writtenForm="toutefois"/>
+                <Equivalent languageIdentifier="pes" writtenForm="علي رغم"/>
+                <Equivalent languageIdentifier="eng" writtenForm="nevertheless"/>
+                <Equivalent languageIdentifier="fra" writtenForm="cependant"/>
+                <Equivalent languageIdentifier="fra" writtenForm="pourtant"/>
+                <Equivalent languageIdentifier="eng" writtenForm="however"/>
+                <Equivalent languageIdentifier="fra" writtenForm="néanmoins"/>
+                <Equivalent languageIdentifier="spa" writtenForm="no obstante"/>
+                <Equivalent languageIdentifier="fin" writtenForm="kuitenkin"/>
+                <Equivalent languageIdentifier="spa" writtenForm="sin embargo"/>
+                <Equivalent languageIdentifier="bul" writtenForm="въпреки това"/>
+                <Equivalent languageIdentifier="nld" writtenForm="maar"/>
+                <Equivalent languageIdentifier="arb" writtenForm="مع ذلك"/>
+                <Equivalent languageIdentifier="nld" writtenForm="niettemin"/>
+                <Equivalent languageIdentifier="por" writtenForm="porém"/>
+                <Equivalent languageIdentifier="nld" writtenForm="edoch"/>
+                <Equivalent languageIdentifier="nld" writtenForm="echter"/>
+                <Equivalent languageIdentifier="por" writtenForm="todavia"/>
+                <Equivalent languageIdentifier="nld" writtenForm="toch"/>
+                <Equivalent languageIdentifier="fra" writtenForm="nonobstant"/>
+                <Equivalent languageIdentifier="nld" writtenForm="nochtans"/>
+                <MonolingualExternalRef externalSystem="OW SynTrans ID" externalReference="318653"/>
+            </Sense>
+        </LexicalEntry>
+        <LexicalEntry id="OW_deu_LexicalEntry_1" lexicon="OW_Lexicon_deu">
+            <Lemma>
+                <FormRepresentation languageIdentifier="deu" writtenForm="und"/>
+            </Lemma>
+            <Sense id="OW_deu_Sense_1" index="312308" synset="OW_deu_Synset_9706" lexicalEntry="OW_deu_LexicalEntry_1">
+            </Sense>
+        </LexicalEntry>
+    </Lexicon>
+</LexicalResource>

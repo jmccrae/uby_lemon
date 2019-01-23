@@ -1,0 +1,62 @@
+\section{Applications of \emph{le\-mon\-U\-by}}
+\noindent
+As a web resource, \emph{le\-mon\-U\-by} provides two main possible applications: firstly as a resource
+to allow better lexical description of ontology entities and secondly as a resource for NLP applications.
+
+As a wide coverage resource containing lexical information, it would be possible to link existing ontologies
+and terminology vocabularies to \emph{le\-mon\-U\-by} and then obtain rich information about the linguistic usage of a given term.
+As an example, consider
+the cross-lingual linking  of verb senses across English and German available in \emph{le\-mon\-U\-by}. 
+Verb senses in the German OmegaWiki can be enriched by semantic role and selectional
+preference information from VerbNet and FrameNet
+via the cross-lingual linking between German OmegaWiki and WordNet, and via the WordNet--VerbNet and WordNet--FrameNet 
+linking.
+% based on subcategorization frames.
+% The standardized format for English and German subcategorization frames used in \emph{le\-mon\-U\-by} can be exploited for such a
+% cross-lingual linking of verb senses. For instance, verb senses from German lexicons
+% containing subcategorization frames, such as
+% the German wordnet GermaNet \cite{Kunze02} can be linked to resources such as VerbNet, which
+% provides access not only to information on semantic roles
+% or selectional preferences, but also to semantic role information from FrameNet via the VerbNet--FrameNet
+% linking in \emph{le\-mon\-U\-by}. 
+Currently, no German lexica with these information types are freely available for
+research purposes.
+
+%The OLiA ontologies (and the terminology repositories it is linked with) have been applied as a component of
+%the \emph{lemon} model before \cite{mccrae2012interchanging}, and (as part of their original motivation), they can
+%be used to represent, compare and integrate linguistic annotations in corpora on the basis of formal concepts rather
+%than arbitrary strings \cite{chiarcos2010towards}, and in this function, they also enjoy a certain popularity in NLP
+%applications \cite{hellmann2012nif}. In a Linked Data context, they explicitly allow to compare the linguistic categories used in
+%Uby with the morphosyntactic annotations in linguistic corpora, if these are represented in RDF. An RDF version of the MASC
+%corpus \cite{ide-etal08-masc} has been produced,
+%\footnote{
+%    The current Linked Data version of the corpus, MASC 1.0.3, generated from data available under \url{http://datahub.io/dataset/masc}, is not yet linked with other resources as it will soon be deprecated by the release of a new version of the corpus and a revision of its data model.
+%}
+%a resource that also provides FrameNet and WordNet annotations, and whose annotations can thus be directly
+%compared with and combined with Uby resources. Information integration between Uby and corpora is another example of
+%\emph{le\-mon\-U\-by}.
+
+As a resource for NLP applications, \emph{le\-mon\-U\-by} can be easily deployed into existing
+applications~\cite{unger2010generating}. The wide variety of lexical information types it offers, ranging from
+taxonomic relationships (e.g., hyponomy) and translations to fine-grained lexical-syntactic information,
+makes it an attractive resource for many different NLP tasks, such as Entity or Predicate Disambiguation, to name only two.
+
+Recently, it has been shown that \emph{le\-mon\-U\-by} is a valuable resource for machine translation \cite{mccrae-cimiano:2013:NLP-LOD-SWAIE}. 
+By mining translations from \emph{le\-mon\-U\-by} and combining them with
+the Moses statistical machine translation, the performance of the resulting machine translation system improved.
+% Furthermore, as \emph{le\-mon\-U\-by} is represented in the \emph{lemon} model it can be easily deployed into existing
+% NLP applications~\cite{unger2010generating}. 
+
+Furthermore, all the data from \emph{le\-mon\-U\-by} is available via
+a SPARQL endpoint.\footnote{\url{http://lemon-model.net/sparql.php}} Thus, ad-hoc queries can be used to access and explore the resource, for example 
+to find translational equivalents quickly and easily.
+
+%NLP applications that use \emph{le\-mon\-U\-by} can take advantage of the fact that its component resources are interoperable, both
+%structurally and semantically. This enables easy switching between different \emph{le\-mon\-U\-by} lexicons in the context of any
+%component-based NLP system.
+
+%Consider as an example of uniform access to \emph{le\-mon\-U\-by} lexicons the following two SPARQL queries that
+%retrieve all hyponyms of the lemma {\em tree}, first from WordNet and second from Ome\-ga\-Wi\-ki: {\bf TODO John insert queries}
+
+
+

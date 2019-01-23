@@ -1,0 +1,179 @@
+\section{Linking \emph{le\-mon\-U\-by} to language resources}
+
+\noindent
+We linked \emph{le\-mon\-U\-by} to other related resources in the LLOD cloud in order to make it accessible
+from existing datasets on the Semantic Web.
+
+%% CC: if {sec-olia} should be dropped, this is the replacement text
+% On the one hand, this pertains to terminology repositories in the LLOD cloud, especially 
+% the OLiA Reference Model that \emph{ubyCat} is linked\footnote{\url{http://purl.org/olia/ubyCat-link.rdf}} to as an `OLiA Annotation Model'. 
+% The Ontologies of Linguistic Annotation act as a central reference hub for linguistic annotations in the LLOD cloud; 
+% OLiA provides formal definitions of annotation schemes for various linguistic phenomena in about 70 languages as OWL/DL ontologies, 
+% and it is further linked with other terminology repositories such as ISOcat and GOLD \cite[GOLD]{farrar2003markup}.
+%
+% On the other hand, \emph{le\-mon\-U\-by} can be easily linked with lexical-semantic resources in the LLOD cloud. For example, 
+% this pertains to the DBpedia for which links with \emph{le\-mon\-U\-by} can be deduced from the 
+% Wikipedia dump that is part of UBY, but that has not been converted for reasons of redundancy with the DBpedia.
+
+\subsection{Linking \emph{ubyCat} with repositories of linguistic terminology} % the latter is an outlook, but mentioned as such
+\label{sec-olia}
+
+\noindent
+We linked the data categories in \emph{ubyCat} with the OLiA Reference Model,
+which
+provides formal definitions of annotation schemes for various linguistic phenomena in about 70 languages as OWL/DL ontologies, 
+and which  is further linked with other terminology repositories such as ISOcat and GOLD \cite{farrar2003markup}.
+
+%% JEK commented this out 
+% Within the LLOD cloud, the Ontologies of Linguistic Annotation act as a central reference hub for
+% linguistic annotations in about 70 languages, for which they provide formal definitions of annotation
+% schemes for various linguistic phenomena as OWL/DL ontologies. OLiA establishes interoperability between
+% different annotation schemes by linking them to an overarching `Reference Model'.
+% Through the OLiA Reference Model, interoperability with community-maintained data
+% category registries can be achieved, as it is linked to both GOLD \cite[GOLD]{farrar2003markup} and ISOcat.
+% Unlike these \emph{evolving} repositories that aim for definitions and categories that are generally applicable, 
+% the OLiA Reference Model only serves as an aggregation point for the annotation schemes directly linked to it.
+% It generalizes over these schemes, interprets them against other terminology repositories, and thereby provides
+% a stable interface between linguistic annotations and these repositories in-the-making.
+
+% The evolving character of ISOcat, for example, is evident from its appeal as a semistructured, extendable list that seems to be accumulative rather than normative: Data providers can augment the repository with their own data categories,\footnote{
+%      Shown for example by largely equivalent, but distinct data categories `noun':
+%      DC-1333, DC-2704, DC-3347.
+% }
+% but ISOcat does not provide a formalism to define their relationship. The small set of relations between data categories it
+% does provide are optional and not consistently applied. A relation category registry that has been announced for
+% this purpose \cite{schuurman-windhouwer-2011-relcat} is not yet in common usage.
+
+%% JEK this paragraph is very general and might be obvious for the target audience?
+%% a similar argument is already present in sec 4.1 by way of example (ISOcat)
+% An ontology-based approach also allows complex relationships among reference categories and between reference categories and
+% annotations to be expressed. In contrast to the hierarchical structure of an XML schema, representing an ontology in RDF allows
+% arbitrary relational structures to be represented and 
+% %Ontology design requires explicit hierarchical structures, it allows the use of arbitrary relational structures, and it 
+% encourages the formalization of such relations as axioms, e.g., by means of cardinality or range constraints. 
+
+%% JEK I tried to summarize like that:
+The \emph{ubyCat} ontology plays an important role for the linking of 
+UBY data categories to OLiA, because it defines grammatical concepts used in UBY-LMF in a formal data model.
+%% JEK so this becomes redundant
+% For the linking of 
+% UBY data categories to the OLiA Reference Model, the ubyCat ontology defines grammatical concepts used in UBY-LMF. 
+% An important difference as compared to the UBY DTD or ISOcat is that this ontology provides a formalization of data categories
+% in an elaborate hierarchical structure. It does maintain the linking with ISOcat (originally specified only as a comment in the DTD),
+% by means of a linking with the OLiA Reference Model that in turn is linked with ISOcat (and other terminology repositories).
+The linking between \emph{ubyCat} and the OLiA Reference Model is implemented by subClassOf relationships between its concepts and 
+the Reference Model. 
+In OLiA, this mechanism is generally applied to physically separate resource-specific, 
+interpretation-independent information (e.g., from an annotation scheme, hence the term `OLiA Annotation Model') 
+from resource-independent terminology (provided by the OLiA Reference Model) and its interpretation in terms of the latter (`Linking Model'). 
+
+The separation of interpretation and interpretation-independent information by means of a declarative Linking Model\footnote{\url{http://purl.org/olia/ubyCat-link.rdf}} 
+is
+necessary for reasons of transparency and reversibility, because \emph{different interpretations} and thus, different linkings may be possible.
+Any interpretation requires to compare information provided by different communities (resource developer, 
+terminology maintainer), it may be affected by differences in point of view or terminological traditions familiar to 
+the ontology engineer. With the linking contained within a separate file, 
+%% JEK file is given in footnote at the beginning of the section
+%\url{http://purl.org/olia/ubyCat-link.rdf} 
+it is actually possible to provide alternative interpretations of the same Annotation Model.
+
+% This interpretation may be complex: Many annotation schemes for Germanic languages postulate a category `determinerPossessive', and so does Uby, for possessive pronouns like \emph{\underline{his} house}. However, this conflates independent levels of analysis, syntax (determiners mark nouns as noun phrases), and semantics (pronouns ``stand in for'' nouns).
+% Pronouns can have different syntactic functions, attributive pronouns can modify nouns
+% (as in \emph{\underline{his} house}), substitutive pronouns represent independent noun phrases (as in \emph{that's \underline{him}}).
+% % or \emph{that's \underline{his}}).
+% In a terminology repository, however, these functions should be carefully distinguished,
+% as there are languages where no category `determiner' exists (e.g., Russian, which nevertheless has attributive pronouns),
+% or where attributive pronouns are not necessarily determiners (e.g., in Italian \emph{la donna \underline{mia}}). Accordingly,
+% the linking defines the Uby determinerPossessive as Determiner \emph{and} AttributivePronoun \emph{and} PossessivePronoun.
+% %\footnote{Due to the accumulative rather than normative character of ISOcat, this is not represented in ISOcat, which simply provides us with categories for possessiveDeterminer and ingForm without clarifying their relation to language-independent categories.}
+
+Another advantage of an ontological formalization of linguistic terminology is that it is more expressive than a plain hierarchy or list of terms. 
+An example for a complex linking is the verb form annotation `ingForm', used for verb forms like \emph{talking} in the resource.
+This category represents a language-specific merger of present participles (\emph{he is \underline{speaking}},
+Old English \emph{-inde}) and gerunds (\emph{he began $\left[\right.$the$\left.\right]$ \underline{speaking}}, Old English \emph{-inge}).
+% The second example is unambiguous only with determiner, without, it is an Old English "inflected infinitive", not strictly speaking a gerund (even though it is called so, but the ending is -an and this is the *third* source of -ing):
+% inflected infinitive: he ongann sprecan "he began speaking", not he ongann *sprecinge
+% participle: se ðe wið hine sprecende wæs "that he with him speaking was"
+The linking provides a language-neutral definition as PresentParticiple \emph{or} Gerund, so that
+categories across different languages can be compared more easily.\footnote{
+    It should be noted that such a complex linking requires the use of operators
+    like \emph{and} and \emph{or} in the linking, to capture this information, OLiA ontologies employ OWL/DL.
+    The direct mapping between annotations and reference concepts originally advocated for ISOcat and GOLD cannot
+    represent this information.
+}
+
+Through OLiA, grammatical information from \emph{le\-mon\-U\-by} is interoperable with other LLOD resources linked 
+to either OLiA or any of the terminology repositories it is linked with, including GOLD and ISOcat.
+
+\subsection{Linking \emph{le\-mon\-U\-by} to lexical resources}
+\noindent
+As UBY is derived from existing lexical resources, the simplest links to create are those
+to other RDF versions of the resources that compose UBY. For WordNet, these links
+are simply created by mapping the data of UBY, which uses WordNet 3.0, to the linked data version of
+WordNet 3.0.\footnote{\url{http://semanticweb.cs.vu.nl/lod/wn30/}} Here,
+we provided links at both the sense level and at the lexical entry level
+(lexical entries are ``words'' in WordNet 3.0). As can be expected, we found that this linking worked apart
+from 7 senses that did not map, which we believe is due to a bug in the
+WordNet API.
+
+In addition, we provided links at the lexical entry level to two existing resources that are also widely
+used, i.e., RDF WordNet 2.0~\cite{van2006conversion} and an RDF instantiation of Wiktionary.\footnote{\url{http://wiktionary.dbpedia.org}}
+These links at the lexical entry level are created if two entries share the same lemma and part-of-speech information.
+We assume this linking is always correct given the lemma and part-of-speech are correct in the original resource.
+%The precision of the resulting linking is 100\% by construction.
+% For the linking at the lexical entry level, we assumed that two entries can be linked, if they share
+% the same lemma and part-of-speech information.
+
+For the RDF WordNet 2.0, we created such a simple linking at the lexical entry level, because
+a linking at the sense level based on the sense identifiers is not possible
+due to different WordNet versions using different sense identifiers.
+
+% For the RDF export of Wiktionary, we first linked the WordNet data at the lexical entry level using
+% the lemma and part-of-speech information. This was mostly effective, 
+
+The linking of the Uby version of WordNet and the RDF export of Wiktionary at the lexical entry level
+is based on the assumption that corresponding word classes share the same part-of-speech category in
+both resources. While this is mostly true, we found a few word classes where we had to manually 
+unify diverging part-of-speech categories; these word classes were initially not covered by the linking. 
+For instance, for acronyms (e.g. IBM), Wiktionary assigns
+``Initialism'' as a part-of-speech, whereas WordNet counts these as nouns.
+% however some
+% elements were initially missing due to category misalignment (Wiktionary has
+% ``Initialism'' as a part-of-speech, for example for ``IBM'', whereas WordNet
+% counts these as nouns); we added manual corrections to compensate
+% for this. 
+Statistics for all mappings including the coverage of the linkings are given in table \ref{mapping-stats}.
+
+
+% As the sense identifiers are
+% different to the WordNet version used by UBY
+% we only attempted to link at the lexical
+% entry level, using the assumption that the lemmas were the same. Secondly, we
+% linked to the RDF export of Wiktionary~\footnote{\url{http://wiktionary.dbpedia.org}}.
+% For this resource, we first linked the WordNet data on the lexical entry level using
+% the lemma and part-of-speech information. This was mostly effective, however some
+% elements were initially missing due to category misalignment (Wiktionary has
+% ``Initialism'' as a part-of-speech, for example for ``IBM'', whereas WordNet
+% counts these as nouns); we added manual corrections to compensate
+% for this. Statistics for all mappings are given in table \ref{mapping-stats}.
+
+\begin{table*}
+  \begin{tabular}{|l|l|c|c|c|}
+    \hline
+    \emph{le\-mon\-U\-by} Resource & Target Resource & Links & Coverage of Uby & Coverage of target \\
+    \hline
+    WordNet & WordNet 3.0 & 206,773 & 99.9\% & 99.9\% \\
+    WordNet & WordNet 2.0 & 84,416  &40.8\% & 97.8\% \\
+    WordNet & Wiktionary English & 76,294  &36.9\% & 18.4\% \\
+    \hline
+  \end{tabular}
+  \caption{Number of external links created between \emph{le\-mon\-U\-by} and other resources
+  in the LLOD cloud. \label{mapping-stats}}
+\end{table*}
+  	
+
+
+
+
+
+

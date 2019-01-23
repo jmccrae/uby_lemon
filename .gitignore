@@ -1,0 +1,7 @@
+target
+data/
+.svn
+uby2lemonBySax/*.rdf
+uby2lemonBySax/*.xml
+uby2lemonBySax/*.nt
+*~

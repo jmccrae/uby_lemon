@@ -1,0 +1,233 @@
+\section{Converting UBY lexica to  \emph{lemon}: \emph{le\-mon\-U\-by}}
+
+\begin{table}
+  \begin{tabular}{|p{3cm}|cc|}
+    \hline
+    \emph{lemonUby} Resource & Triples & Links\\
+    \hline
+    WordNet & 5,102,744 & 196,420 \\
+    VerbNet & 570,256 & 24,425\\
+    FrameNet & 1,110,763 & 61,070 \\
+    OmegaWiki English & 6,173,515 & 113,930\\
+    OmegaWiki German & 5,310,551 & 159,978\\
+    Wiktionary German & 4,766,917 & - \\
+    Wiktionary English & 9,881,730 & 99,797\\
+    \hline
+  Total & 32,916,476 & 327,810 \\
+    \hline
+  \end{tabular}
+  \caption{Number of triples and links for each resource.\label{triples}}
+ \end{table}
+
+\noindent 
+To automatically convert data from UBY-LMF (extracted from UBY) to  \emph{lemon},
+we performed a mapping of UBY-LMF elements to \emph{lemon} concepts and properties.
+    % CC: from sect. 3
+This involves two aspects: Formalizing and mapping UBY data structures in a Semantic-Web compliant way,
+and the actual conversion of UBY data. 
+
+\subsection{Modeling Data Categories: \emph{ubyCat}}
+
+\noindent 
+In UBY-LMF, most of the terms used and many features (e.g., the feature ``partOfSpeech'' and the corresponding attribute values)
+are linked to % standardized %% CC: Nö, ISOcat ist standardisiert, nicht der Inhalt
+%% JEK Inhalt und Form lassen sich schwer trennen ;) - aber ich weiß was du meinst
+community-maintained data categories in ISOcat.\footnote{\url{http://www.isocat.org/rest/dcs/484}}
+As the mapping of UBY-LMF to \emph{lemon} preserves this linking, \emph{le\-mon\-U\-by}
+is linked to ISOcat as well.
+The content of ISOcat is also available as Linked Data \cite{ldl-windhouwer}, 
+% actually, it isn't in the cloud diagram, for the reasons mentioned below -- and neither should be GOLD, for the same reasons. 
+%But for GOLD, there is at least an implicit note on the website that the content provided should be available
+and therefore, provides a possible and direct way to interconnect \emph{le\-mon\-U\-by} with other LLOD resources 
+at the level of linguistic data categories.
+
+% not relevant any more (ISOcat will have an open license)
+% However, ISOcat does currently not contain an explicit license statement, even though its content is available over the internet.
+% While people involved (Menzo Windhouwer, p.c., June 2012) believe that a publication under
+% an open license would be appreciated, it has not been clarified whether the
+% restrictive licensing policy of the ISO that applies to the ISOcat technical
+% specifications also extends to the ISOcat data categories.
+% A similar problem persists with the General Ontology of Linguistic Description \cite[GOLD]{farrar2003markup}
+% %(GOLD)
+% \footnote{\url{http://linguistics-ontology.org/}}, another LLOD-linked % this is true, at least from OLiA
+% terminology repository.
+%Currently, GOLD does not contain
+%an explicit license statement as well, but it is available on-line, and as a community
+%project,
+%publication under an open license can be expected.
+
+However, ISOcat is not a formal ontology, but only a semistructured collection of terms, and while it serves as a 
+repository of definitions, it does not provide a formal data model that can be applied to a resource: 
+ISOcat contains doublets created by different data providers, %e.g., VoiceProperty [DC-3551] vs. voice [DC-1433], 
+and such superficially similar categories may actually have incompatible definitions, e.g., gerundive [DC-1294] is an ``adjective formed from a verb'' (excluding verbal nouns), whereas gerundive [DC-2243] is a ``non-finite form (...) other than the infinitive'' (including verbal nouns). Hierarchical relations between ISOcat terms are possible, but not obligatory, and when compared with a full-fledged ontology, ISOcat terms that represent superconcepts for a bundle of features 
+%(e.g., ActiveVoice [DC-3064] dcif:isA VoiceProperty [DC-3551]) 
+do not distinguish relational and categorial aspects.
+%VoiceProperty could be either a property that assigns ActiveVoice to a particular unit of annotation, or a concept that defines the range of such a relation.
+
+To render UBY/ISOcat data categories in a formal data model, we created the OWL/DL 
+ontology \emph{ubyCat}\footnote{\url{http://purl.org/olia/ubyCat.owl}} which defines the semantics of
+linguistic terms used in \emph{le\-mon\-U\-by}:
+With respect to \emph{data structures}, it extends the \emph{lemon} ontology,\footnote{\url{http://www.monnet-project.eu/lemon}} concepts 
+that are equivalent with \emph{lemon} but have a different label are included, flagged as deprecated (and not used during the conversion),
+but left in the ontology to help UBY-LMF users find the equivalent \emph{lemon} categories. 
+
+With respect to \emph{data categories}, \emph{ubyCat} is linked to the Ontologies of Linguistic Annotations
+(OLiA) \cite{chiarcos2008ontology,chiarcos2012ontologies},\footnote{\url{http://purl.org/olia}} a modular 
+architecture of OWL/DL ontologies that link resource-specific linguistic terminology (as for UBY) to an overarching
+`Reference Model' which (a) provides a particular view on linguistic terminology, and (b) serves as an interface to
+multiple community-maintained terminology repositories such as ISOcat with which it is linked. Details of this
+linking are described in Sect.\ \ref{sec-olia}.
+
+\subsection{Converting the Data}
+
+\noindent
+The actual conversion  of UBY data was achieved by means of
+an XML style sheet transform\footnote{The XSL file can be downloaded at
+\url{https://raw.github.com/jmccrae/lemon.api/master/src/main/resources/xslt/ubylmf2lemon.xsl}}
+that implements a mapping of the UBY-LMF model to the \emph{lemon} model.
+
+The following data from UBY were converted: WordNet, FrameNet, VerbNet,
+English and German Wiktionary, the English and German
+entries of Ome\-ga\-Wi\-ki,
+as well as links between pairs of these lexicons at the word sense level:
+
+\begin{itemize}
+ \item monolingual manual sense links for
+VerbNet--Frame\-Net,\footnote{\url{http://verbs.colorado.edu/semlink/}}
+VerbNet--WordNet,\footnote{\url{http://verbs.colorado.edu/~mpalmer/projects/verbnet}} and 
+automatic sense links for WordNet--Frame\-Net \cite{tonelli-pighin:2009:CoNLL,laparra-rigau:2009:RANLP09},
+and WordNet--Wiktionary \cite{meyer2011what};
+\item cross-lingual automatic sense links between WordNet and German Ome\-ga\-Wiki \cite{gurevych2012uby}, and manual inter-language links
+already given in Ome\-ga\-Wi\-ki.
+\end{itemize}
+%% CC: slightly shortened
+
+The resulting resource \emph{le\-mon\-U\-by} has been published at
+\url{http://lemon-model.net/lexica/uby}
+under an open CC-BY-SA license. The choice of a share-alike
+license was due to UBY being published under the same license.
+Statistics for
+the \emph{le\-mon\-U\-by} resources including the sense links within this dataset
+are given in table \ref{triples}. An obvious gap is the 
+German Wiktionary which is currently not linked to any other resource within
+\emph{le\-mon\-U\-by}. Future work on increasing the link density within \emph{le\-mon\-U\-by}
+should address this gap.
+%Based on the mapping of UBY-LMF to lemon, we performed a conversion of the following
+%LRs which demonstrate the main parts of a UBY-LMF -- lemon
+%mapping: WordNet, FrameNet, VerbNet, and multilingual Ome\-ga\-Wi\-ki.
+%These LRs illustrate a number of differences between the two lexicon models in a
+%prototypical way. First, we will describe differences in the representation of senses,
+%then we will summarize more general differences that
+%had to be harmonized via a mapping. The actual mapping was achieved by means of
+%an XML stylesheet transform~\footnote{The XSL file can be downloaded at
+%\url{https://raw.github.com/jmccrae/lemon.api/master/src/main/resources/xslt/ubylmf2lemon.xsl}}.
+
+%Although both UBY-LMF and \emph{lemon} are based on LMF,
+The XML style sheet mapping between the two lexicon models UBY-LMF and \emph{lemon}
+revealed a number of differences between them. Most differences are due to the fact that
+\emph{lemon} is a model for ontology lexica where the lexicon and ontology layers are kept separate.
+Thus, sense representations in \emph{lemon} primarily consist of references to the associated ontology
+where a rich and domain-specific sense definition is provided.
+UBY-LMF, on the other hand, represents fine-grained sense information in the lexicon itself.
+% CC: moved here from the end, honestly, I did not get the following paragraphs
+
+%The development of UBY-LMF, on the other hand, has been driven by the requirement to cover a large variety of
+% lexical information types, which ranges from morphology and lexical syntax to lexical semantics and the mapping
+% between syntactic and semantic arguments.
+%Thus, the resulting lexicon model makes use of very fine-grained sense specifications which are often grounded in linguistic theories,
+%e.g. Frame Semantics (the basis of FrameNet) or the Levin alternation classes of verbs \cite{levin93} (the basis of VerbNet).
+
+
+%illustrates how the two lexicon models represent senses in different ways:
+
+In line with previous authors~\cite{mccrae2012integrating}, synsets in UBY-LMF (provided in
+    WordNet and Ome\-ga\-Wi\-ki) are considered to be SKOS concepts and referenced like
+    ontology classes in \emph{lemon}. Hypernym
+  relationships stated in the lexicon are mapped directly to broader/narrower
+  relationships in the ontology. %In UBY-LMF, Synset is part of the lexicon.
+%\item Synsets, which are used in WordNet and Ome\-ga\-Wi\-ki, are considered as
+%  entryless senses in \emph{lemon}. Previous
+%  conversions~\cite{mccrae2012integrating} have treated synsets as ontological
+%  classes, however here the
+
+The ``SemanticPredicate'' class in UBY-LMF is used to represent semantic frames from
+  FrameNet \cite{TUD-CS-2013-0003}; frames group senses which evoke the same
+  kind of situation with participants taking over particular roles.
+  Thus, senses in a FrameNet frame are semantically related, but not synonymous;
+  e.g., the verbs {\em love} and {\em hate} are both in the same FrameNet frame. %Experiencer subj frame
+In \emph{lemon} this relation is represented as subclass of the general lexical sense and linked to the rest of the lexicon by
+a {\em broader} (sense) relationship.
+
+VerbNet verb classes and their hierarchical organization correspond to
+  ``Subcat[egorization]FrameSet'' in UBY-LMF. VerbNet classes group verbs that
+share the same syntactic subcategorization frame, semantic roles, selectional
+restrictions, and semantic predicate. Although the resulting verb classes are
+semantically coherent, the semantic relatedness of verb senses in a VerbNet class is much more
+distant than in FrameNet, e.g., the verbs {\em believe}, {\em swear} and {\em doubt} are in the same class.
+%conjecture-29.5-1.
+%semantically related and
+%  syntactically similar senses; the semantic relatedness of senses in one VerbNet class is much more
+%distant that in FrameNet.
+Verb classes in \emph{lemon} are represented by a broader sense as well, so \emph{lemon} collapses the
+distinction between FrameNet-style and VerbNet-style sense groupings. 
+
+Translations to other human languages which are encoded as string-valued lexical items in the ``Equivalent'' class
+are mapped as a datatype property on the sense, in line with the UBY representation \cite{TC32012} rather than
+attempting to construct a cross-lingual linking for these terms as in the original resources
+(Ome\-ga\-Wi\-ki and Wiktionary).
+Finally, provenance information is added to each resource at the root URL, including the source resource and version, time
+of creation and a link to the FOAF profile of the executor. Further examples of usage and modelling are available
+from the website~\footnote{e.g., \url{http://lemon-model.net/lexica/uby/modelling.php} or \url{http://lemon-model.net/learn/learn.php}}.
+% The hierarchic organisation of VerbNet classes is thus lost, but this can be
+% reconstructed by means of an axiomatic description of subcategorization frames in
+% order to create a hierarchy similar as in the LexInfo linguistic
+% ontology~\cite{mccrae2011linking}.
+% \textbf{jmc: Do we need this\ldots I don't really understand it still? Are these SemanticLabels in LMF?}
+
+
+% Subcategorization frames and senses are not explicitly linked in \emph{lemon} (as in UBY-LMF), but instead
+%     are implicitally linked by matching the syntactic and semantic arguments.
+%     \textbf{GermaNet is not part of le\-mon\-U\-by}
+%     In GermaNet, only
+%     syntactic arguments are supplied so we included an explicit link from the sense to its syntactic
+%     behaviour.
+%\item Syntactic behaviour in UBY-LMF mainly provides information on
+%subcategorization frames, which are specified by means of syntactic arguments
+%with rich morpho-syntactic information attached
+%\cite{TUD-CS-2012-0024}.
+%SyntacticBehaviour is merely a property instead of a node in \emph{lemon}: in
+%contrast to LMF, there is no need for an explicit link between senses and
+%subcategorization frames. Instead this information  can be
+%reconstructed from the \emph{synArg} - \emph{semArg} mapping.
+%Lexica which do not specify semantic arguments, e.g., GermaNet \cite{Kunze02},
+%must provide a specific annotation to allow this information to be represeneted.
+
+%Translations are represented differently. UBY-LMF covers also
+%uses ``Equivalent'' for
+ % translations that are not sense-disambiguated \cite{TC32012}, where as
+ % \emph{lemon} requires that this link is made at the sense level. In the case
+ % where it was not possible to infer the sense, the lexical entries a `stub'
+ % lexical entry with a single sense.\footnote{UBY-LMF can also represent sense-disambiguated
+ %   translations by means of a sense axis which connects senses from different
+ % lexica.}
+ % \textbf{TODO jmc: We should change the modelling here to perhaps just a simple annotation, so the usage is more practical.
+ %   More particularly, should we note that this is due to data lost by UBY-LMF as in the original resources, these
+%were links to other lexical entries (as they should be in lemon) but are not represented as such in UBY-LMF?}
+
+
+
+% most of the differences between UBY-LMF and \emph{lemon} derive from the fact that
+% \emph{lemon} keeps the lexicon and ontology layers separate. In this way, sense representations in
+% \emph{lemon} are more compact compared to the more distributed sense representations in UBY-LMF.
+
+%the separation of  the principal distinction between UBY-LMF and \emph{lemon}the separation of
+%a principal difference between UBY-LMF and \emph{lemon} is redundant vs. compact  representation of information.
+%For instance, the synset class is merged into the lemon:LexicalSense, while UBY might provide information on
+%synonyms by sense relations of type synonym and by the Synset class (which groups synonymous senses).
+%Since UBY-LMF is populated fully-automatically, the consistency of redundant information can be ensured.
+%An example is SyntacticBehaviour which is not used in \emph{lemon}: while the information to which sense a subcat frame belongs to, can be reconstructed from the \emph{synArg} - \emph{semArg} Mapping, the
+%relationship between sense and syntactic behaviour can not be recovered for LR which do not specify
+%semantic arguments, e.g., GermaNet.
+
+
+

@@ -1,0 +1,64 @@
+
+\section{Linking \emph{lemonUby} with corpora} % the latter is an outlook, but mentioned as such
+
+
+%Within the LLOD cloud, the Ontologies of Linguistic Annotation (OLiA,\cite{chiarcos2008ontology,chiarcos2012ontologies})
+% represent a repository of annotation
+%terminology that act as a central reference hub for 
+%linguistic annotations in about 70 languages, for which they provide formal definitions of annotation
+%schemes for various linguistic phenomena as OWL/DL ontologies. Further, OLiA establishes interoperability between
+%different annotation schemes by linking them to an overarching `Reference Model'.
+%Through the OLiA Reference Model, interoperability with community-maintained data
+%category registries can be achieved, as it is linked to both GOLD and ISOCat.
+%Unlike these \emph{evolving} repositories that aim for definitions and categories that are generally applicable, the OLiA Reference Model only serves as an aggregation point for the annotation schemes directly linked to it. It generalizes over these schemes, interprets them against other terminology repositories, and thereby provides a stable interface between linguistic annotations and these repositories in-the-making.
+
+
+%An ontology-based approach allows to express complex relationships among reference categories and between reference categories and annotations. For the linking of Uby to the OLiA Reference Model, we created an ontology for the morphosyntactic concepts used in UBY-LMF, that redefined the enumeration of categories in the DTD was redefined with more elaborate hierarchical structures. This ontology is linked to the OLiA Reference Model by subClassOf relationships between its concepts and the Reference Model. As this linking is an \emph{interpretation}, it is physically separated in an independent `Linking Model', because different interpretations may be possible. 
+
+The OLiA ontologies (and the terminology repositories it is linked with) 
+%have been applied as a component of the \emph{lemon} model before \cite{mccrae2012interchanging}, and (as part of their original motivation), they 
+can be used to represent, compare and integrate linguistic annotations in corpora on the basis of formal concepts rather than arbitrary strings \cite{chiarcos2010towards}.
+% and in this function, they also enjoy a certain popularity in NLP applications \cite{hellmann2012nif}. 
+In a Linked Data context, they explicitly allow to compare the linguistic categories used in \emph{lemonUby}
+ with the morphosyntactic annotations in linguistic corpora, if these are represented in RDF. 
+An RDF version of the MASC corpus \cite{ide-etal08-masc} has been produced,
+%\footnote{
+%    The current Linked Data version of the corpus, MASC 1.0.3, generated from data available under \url{http://datahub.io/dataset/masc}, is not yet linked with other resources as it will soon be deprecated by the release of a new version of the corpus and a revision of its data model.
+%}
+a resource that also provides FrameNet and WordNet annotations, and whose annotations can thus be directly compared with and combined with UBY resources.
+We performed a linking of the FrameNet 1.5 version contained in \emph{lemonUby}
+with the FrameNet annotations in the MASC corpus. As MASC provides FrameNet sense annotations
+for different text genres and domains, this linking can be used to enrich FrameNet senses in
+\emph{lemonUby} by genre and domain information. 
+
+\section{Cross-lingual linking of verb senses}
+The standardized format for English and German subcategorization frames defined in UBY-LMF can be exploited for the 
+ linking of verb senses across English and German. We show in detail how such a linking based on
+subcategorization frame information is performed on the fly and point out important properties of
+the underlying representation of subcategorization frames related to this linking.
+ 
+As an example, the cross-lingual linking of VerbNet and two German lexicons, i.e., the German wordnet GermaNet \cite{Kunze02} and the large syntactic subcategorization lexicon
+IMSLex \cite{TUD-CS999-0006} is described and evaluated.
+This is a particularly interesting linking, because it demonstrates how large lexica with a focus on particular information types in one language 
+(e.g., syntactic subcategorization frames in IMSLex) can be enriched by complementary information from lexica in other languages (e.g., VerbNet). Both GermaNet and IMSLex contain detailed subcategorization information
+for verbs, but they do not contain information on semantic roles
+or selectional preferences for the arguments of verbs. Yet, they are the only large
+German lexica\footnote{GermaNet provides information for 8626 verb lemmas, IMSLex for 10879 verb lemmas.} containing fine-grained subcategorization information which are freely available for research purposes.
+%While GermaNet and IMSLex  both have an academic license, they are the only large scale 
+%German lexicons containing detailed subcategorization information
+% which are freely available for research purposes. However, they do not contain information on semantic roles
+%or selectional preferences for the arguments of verbs. 
+The cross-lingual linking
+of these German lexicons and VerbNet provides access not only to information on semantic roles
+or selectional preferences, but also to semantic role information from FrameNet via the VerbNet--FrameNet
+linking in UBY.
+%For a subset of the three lexicons, the results of the cross-lingual linking approach has been evaluated
+%which yielded a precision of 72,68.
+
+Finally, we compare the cross-lingual linking of verb senses using
+ original UBY lexicons (based on UBY-LMF) with the linking of verb senses which is based on the
+mapping of UBY-LMF to \emph{lemon}.
+
+
+
+ 

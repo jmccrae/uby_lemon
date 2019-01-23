@@ -1,0 +1,127 @@
+\section{Introduction}
+
+\noindent Recently, the language resource community has begun to explore the opportunities offered by the Semantic
+Web, lead by the formation of the Linguistic Linked Open Data (LLOD) cloud
+and an increasing interest in making use of Linked Open Data principles in the context
+of Natural Language Processing (NLP) and Linguistics  \cite{chiarcos2012linked}.
+The use of RDF supports data integration and offers a large body of tools for accessing this data.
+Furthermore, the linked data approach gives rise to novel research questions in the context of
+language resources and their application.
+
+ For lexical resources, data integration has been in
+ the focus of interest for many years, resulting in numerous mappings and linkings of lexica, as well as
+standards for representing lexical resources, such as the ISO 24613:2008 Lexical Markup Framework
+(LMF) \cite{francopoulo2006lexical}. In this context, the LLOD cloud can be considered as a new data integration platform, enabling
+linkings not only between lexical resources, but also between lexical resources and
+other language resources.
+
+We extend the LLOD cloud by a new lexical resource called \emph{le\-mon\-U\-by}\footnote{\url{http://www.lemon-model.net/lexica/uby/}}
+which is
+ the result of converting data extracted from the existing large-scale linked lexical resource UBY
+ \cite{gurevych2012uby}\footnote{\url{http://www.ukp.tu-darmstadt.de/uby/}} to
+ the \emph{lemon} lexicon model.
+UBY has been developed independently from Semantic Web technology. It is LMF based
+and a subset of the LMF-compliant UBY lexicons is pairwise linked at the word sense level.
+The \emph{lemon} lexicon model has been developed for lexical resource integration on the Semantic Web
+\cite{mccrae2012interchanging}.
+This lexicon model serves as a common interchange format for lexical resources on the Semantic Web
+and has been designed to represent and share lexical resources that are linked to ontologies, i.e., ontology lexica.
+Making use of a lexicon interchange format, such as \emph{lemon} is not only important for data integration,
+but also for the reuse of lexicons.
+
+
+% A particularly large-scale example of lexical resource integration is the
+% lexical-semantic resource UBY \cite{gurevych2012uby}\footnote{\url{http://www.ukp.tu-darmstadt.de/uby/}}.
+% UBY has been developed independently from Semantic Web technology and linked data principles.
+% UBY is
+% \begin{itemize}
+%  \item based on LMF, i.e., all lexicons integrated in UBY have been standardized according to the lexicon model
+% UBY-LMF \cite{ecklekohler2012uby,TUD-CS-2013-0003}, which is an instantiation of the abstract ISO standard LMF,
+% \item a linked lexical resource, i.e., a subset of the UBY lexicons is pairwise linked at the word sense level.
+% \end{itemize}
+%
+% For lexical resource integration on the Semantic Web, the \emph{lemon} lexicon model has been developed \cite{mccrae2012interchanging}.
+% This lexicon model serves as a common interchange format for lexical resources on the Semantic Web
+% and has been designed to represent and share lexical resources that are linked to ontologies, i.e., ontology lexica.
+% Making use of a lexicon interchange format, such as \emph{lemon} is not only important for data integration,
+% but also for the reuse of lexicons.
+
+While many lexical resources have already been included in the LLOD cloud, e.g.,
+\cite{Bizer_Lehmann_Kobilarov_Auer_Becker_Cyganiak_Hellmann_2009, mccrae2012integrating, navigli2012babelnet, de2008language, deMeloWeikum2008c},
+the LLOD cloud is still missing a
+large-scale lexical resource rich in lexical information on
+verbs, including aspects such as syntactic behaviour and 
+semantic roles of a verb's arguments.
+%how semantic arguments of verbs can be realised syntactically. 
+Such information is crucial for lexicalizing relational knowledge%
+%which is often expressed by using verbs %% CC: slightly redundant
+, e.g., the relation $like(Experiencer, Theme)$ can be lexicalized syntactically with a verb as in "NP likes NP".
+
+%There has also been some work towards the integration of FrameNet \cite{baker1998berkley} to the Semantic Web \cite{narayanan2003framenet}.
+%All these resources provide a substantial body of lexical knowledge, including semantic relations, multilingual
+%information and encyclopedic knowledge.
+
+The new resource \emph{le\-mon\-U\-by} addresses this gap: Along with resources for word-level semantics (WordNet \cite{fellbaum98-wordnet}, 
+English and German Wiktionary,\footnote{\url{http://www.wiktionary.org}} and the English and German entries of 
+Ome\-ga\-Wi\-ki,\footnote{\url{http://www.omegawiki.org}}) we converted two syntactically rich resources from
+UBY to the \emph{lemon} format: FrameNet \cite{baker1998berkley} and VerbNet \cite{kipper2008large}. %% CC: list all converted resources here
+For further data integration, we established links between \emph{le\-mon\-U\-by} and other language resources in the LLOD cloud.
+
+% We address this gap by converting data from the existing lexical resource UBY to the \emph{lemon} format.
+% The following data from UBY were converted: WordNet, FrameNet, VerbNet \cite{kipper2008large},
+% English and German Wiktionary~\footnote{\url{http://www.wiktionary.org}}, the English and German
+% entries of Ome\-ga\-Wi\-ki~\footnote{\url{http://www.Ome\-ga\-Wi\-ki.org}},
+% as well as links between pairs of these lexicons at the word sense level (links between Verb\-Net--Frame\-Net,
+% Verb\-Net--Word\-Net, Word\-Net--Frame\-Net, Word\-Net--Wiktionary, Word\-Net -- German Ome\-ga\-Wiki).
+% We call the resulting lexical resource \emph{le\-mon\-U\-by}\footnote{\url{http://www.lemon-model.net/lexica/uby/}}
+% and established links between \emph{le\-mon\-U\-by} and oher language resources in the LLOD cloud.
+
+% The data-set presented in this paper, \emph{le\-mon\-U\-by}, is the result of
+% converting a selection of UBY lexica to
+% the \emph{lemon} format:
+% it contains interoperable and interlinked versions of WordNet, FrameNet,
+% VerbNet \cite{kipper2008large}, English and German Wiktionary~\footnote{\url{http://www.wiktionary.org}},
+%  and the English and German entries of
+% Ome\-ga\-Wi\-ki~\footnote{\url{http://www.Ome\-ga\-Wi\-ki.org}}.
+
+
+%Such information is crucial for lexicalizing relational knowledge which is typically expressed
+%by using verbs along with specific arguments.
+
+
+%In the current LLOD cloud, large-scale lexical resources rich in encyclopedic knowledge, such as DBPedia, are
+%predominant, while
+%the size and diversity of lexical resources rich in linguistic knowledge, particularly for verbs,
+% is limited so far.
+% There has already been some work towards the integration of FrameNet \cite{baker1998berkley} to the Semantic Web \cite{narayanan2003framenet},
+%as well as WordNet
+%\cite{van2006conversion}, WordNet and Wiktionary\cite{mccrae2012integrating}, and recently BabelNet as a multilingual
+%lexical resource integrating WordNet and Wikipedia \cite{navigli2012babelnet}.
+% In the Semantic Web, several versions of WordNet REF
+%and FrameNet REF have been available as linked data for quite same time, but due to the LLOD movement
+%new resources such as
+%Wiktionary REF and BabelNet REF have been added just recently.
+%However, the LLOD cloud contains no large-scale lexical resource yet, which is rich in lexical information on
+%verbs, including aspects such as their syntactic behavior and how semantic arguments of verbs can be realized
+%syntactically. Such information is crucial for lexicalizing relational knowledge which is typically expressed
+%by using verbs along with specific arguments.
+
+%  To summarize, our contributions are threefold: (i) an RDF version of data extracted from the existing lexical resource
+%  UBY (called \emph{le\-mon\-U\-by}),
+% (ii) a mapping of the lexicon model UBY-LMF to \emph{lemon}, and (iii)
+% linkings of \emph{le\-mon\-U\-by} to other language resources in the LLOD cloud.
+
+%Moreover, the
+%format chosen for the RDF versions of FrameNet and WordNet
+% was specific to the underlying data model of these two resources which have been characterized as
+%complementary by \cite{Baker:2009}.
+%However, the LLOD cloud contains no large-scale lexical resource yet which is rich in lexical information on
+%verbs, including aspects such as their syntactic behavior and how semantic arguments of verbs can be realized
+%syntactically. Such information is crucial for lexicalizing relational knowledge which is typically expressed
+%by using verbs along with specific arguments.
+%The dataset \emph{le\-mon\-U\-by} which we present in this paper addresses these gaps:
+%it contains interoperable and interlinked versions of WordNet [FEL 98], FrameNet [BAK 98],
+%VerbNet [KIP 08], and multilingual Ome\-ga\-Wi\-ki (www.Ome\-ga\-Wi\-ki.org).
+%\emph{le\-mon\-U\-by} is linked to the LLOD cloud and has a number of
+%additional features that add significant value to the LLOD cloud. We will describe these features and the creation
+%of this dataset in the following sections.

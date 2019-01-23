@@ -1,0 +1,150 @@
+<!--WN_LexicalEntry_3.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<LexicalResource dtdVersion="0_2_0" name="WordNet">
+    <Lexicon languageIdentifier="eng" id="WN_Lexicon_0" name="WordNet">
+        <LexicalEntry id="WN_LexicalEntry_3" partOfSpeech="verb">
+            <Lemma>
+                <FormRepresentation languageIdentifier="eng" writtenForm="smirch">
+                </FormRepresentation>
+            </Lemma>
+            <RelatedForm targetLexicalEntry="WN_LexicalEntry_9630" relType="derivative" targetSense="WN_Sense_12881">
+            </RelatedForm>
+            <Sense id="WN_Sense_4" index="2" synset="WN_Synset_86210" lexicalEntry="WN_LexicalEntry_3">
+                <PredicativeRepresentation predicate="WN_SemanticPredicate_22">
+                </PredicativeRepresentation>
+                <PredicativeRepresentation predicate="WN_SemanticPredicate_15">
+                </PredicativeRepresentation>
+                <SemanticLabel label="verb.communication" type="semanticField">
+                </SemanticLabel>
+                <MonolingualExternalRef externalSystem="WordNet 3.0 part of speech and sense key" externalReference="[POS: verb] smirch%2:32:00::">
+                </MonolingualExternalRef>
+            </Sense>
+            <Sense id="WN_Sense_5" index="1" synset="WN_Synset_88241" lexicalEntry="WN_LexicalEntry_3">
+                <PredicativeRepresentation predicate="WN_SemanticPredicate_29">
+                </PredicativeRepresentation>
+                <SemanticLabel label="verb.contact" type="semanticField">
+                </SemanticLabel>
+                <MonolingualExternalRef externalSystem="WordNet 3.0 part of speech and sense key" externalReference="[POS: verb] smirch%2:35:01::">
+                </MonolingualExternalRef>
+            </Sense>
+            <SyntacticBehaviour id="WN_SyntacticBehaviour_1" sense="WN_Sense_5" subcategorizationFrame="WN_SubcategorizationFrame_25">
+            </SyntacticBehaviour>
+            <SyntacticBehaviour id="WN_SyntacticBehaviour_0" sense="WN_Sense_4" subcategorizationFrame="WN_SubcategorizationFrame_14">
+            </SyntacticBehaviour>
+        </LexicalEntry>
+    </Lexicon>
+</LexicalResource>
+<!--WN_SubcategorizationFrame_14.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<LexicalResource dtdVersion="0_2_0" name="WordNet">
+    <Lexicon languageIdentifier="eng" id="WN_Lexicon_0" name="WordNet">
+        <SubcategorizationFrame id="WN_SubcategorizationFrame_14">
+            <SyntacticArgument id="WN_SyntacticArgument_32" grammaticalFunction="subject" syntacticCategory="nounPhrase">
+            </SyntacticArgument>
+            <SyntacticArgument id="WN_SyntacticArgument_33" grammaticalFunction="complement" syntacticCategory="nounPhrase">
+            </SyntacticArgument>
+        </SubcategorizationFrame>
+    </Lexicon>
+</LexicalResource>
+<!--WN_SubcategorizationFrame_25.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<LexicalResource dtdVersion="0_2_0" name="WordNet">
+    <Lexicon languageIdentifier="eng" id="WN_Lexicon_0" name="WordNet">
+        <SubcategorizationFrame id="WN_SubcategorizationFrame_25">
+            <SyntacticArgument id="WN_SyntacticArgument_59" grammaticalFunction="subject" syntacticCategory="nounPhrase">
+            </SyntacticArgument>
+            <SyntacticArgument id="WN_SyntacticArgument_60" grammaticalFunction="complement" syntacticCategory="nounPhrase">
+            </SyntacticArgument>
+        </SubcategorizationFrame>
+    </Lexicon>
+</LexicalResource>
+<!--WN_Synset_86210.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<LexicalResource dtdVersion="0_2_0" name="WordNet">
+    <Lexicon languageIdentifier="eng" id="WN_Lexicon_0" name="WordNet">
+        <Synset id="WN_Synset_86210">
+            <Definition>
+                <TextRepresentation languageIdentifier="eng" writtenText="charge falsely or with malicious intent">
+                </TextRepresentation>
+            </Definition>
+            <Definition>
+                <TextRepresentation languageIdentifier="eng" writtenText="attack the good name and reputation of someone">
+                </TextRepresentation>
+            </Definition>
+            <SynsetRelation target="WN_Synset_86195" relType="taxonomic" relName="hypernym">
+            </SynsetRelation>
+            <SynsetRelation target="WN_Synset_86211" relType="taxonomic" relName="hyponym">
+            </SynsetRelation>
+            <SynsetRelation target="WN_Synset_86214" relType="taxonomic" relName="hyponym">
+            </SynsetRelation>
+            <SynsetRelation target="WN_Synset_86216" relType="taxonomic" relName="hyponym">
+            </SynsetRelation>
+            <MonolingualExternalRef externalSystem="WordNet 3.0 part of speech and synset offset" externalReference="[POS: verb] 846509">
+            </MonolingualExternalRef>
+        </Synset>
+    </Lexicon>
+</LexicalResource>
+<!--WN_Synset_88241.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<LexicalResource dtdVersion="0_2_0" name="WordNet">
+    <Lexicon languageIdentifier="eng" id="WN_Lexicon_0" name="WordNet">
+        <Synset id="WN_Synset_88241">
+            <Definition>
+                <TextRepresentation languageIdentifier="eng" writtenText="smear so as to make dirty or stained">
+                </TextRepresentation>
+            </Definition>
+            <SynsetRelation target="WN_Synset_88240" relType="taxonomic" relName="hypernym">
+            </SynsetRelation>
+            <MonolingualExternalRef externalSystem="WordNet 3.0 part of speech and synset offset" externalReference="[POS: verb] 1252601">
+            </MonolingualExternalRef>
+        </Synset>
+    </Lexicon>
+</LexicalResource>
+<!--WN_SemanticPredicate_15.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<LexicalResource dtdVersion="0_2_0" name="WordNet">
+    <Lexicon languageIdentifier="eng" id="WN_Lexicon_0" name="WordNet">
+        <SemanticPredicate id="WN_SemanticPredicate_15">
+            <SemanticArgument id="WN_SemanticArgument_26" semanticRole="something">
+                <SemanticLabel label="something" type="selectionalPreference">
+                </SemanticLabel>
+            </SemanticArgument>
+            <SemanticArgument id="WN_SemanticArgument_27" semanticRole="somebody">
+                <SemanticLabel label="somebody" type="selectionalPreference">
+                </SemanticLabel>
+            </SemanticArgument>
+        </SemanticPredicate>
+    </Lexicon>
+</LexicalResource>
+<!--WN_SemanticPredicate_22.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<LexicalResource dtdVersion="0_2_0" name="WordNet">
+    <Lexicon languageIdentifier="eng" id="WN_Lexicon_0" name="WordNet">
+        <SemanticPredicate id="WN_SemanticPredicate_22">
+            <SemanticArgument id="WN_SemanticArgument_42" semanticRole="somebody">
+                <SemanticLabel label="somebody" type="selectionalPreference">
+                </SemanticLabel>
+            </SemanticArgument>
+            <SemanticArgument id="WN_SemanticArgument_43" semanticRole="somebody">
+                <SemanticLabel label="somebody" type="selectionalPreference">
+                </SemanticLabel>
+            </SemanticArgument>
+        </SemanticPredicate>
+    </Lexicon>
+</LexicalResource>
+<!--WN_SemanticPredicate_29.xml-->
+<?xml version="1.0" encoding="UTF-8"?>
+<LexicalResource dtdVersion="0_2_0" name="WordNet">
+    <Lexicon languageIdentifier="eng" id="WN_Lexicon_0" name="WordNet">
+        <SemanticPredicate id="WN_SemanticPredicate_29">
+            <SemanticArgument id="WN_SemanticArgument_55" semanticRole="somebody">
+                <SemanticLabel label="somebody" type="selectionalPreference">
+                </SemanticLabel>
+            </SemanticArgument>
+            <SemanticArgument id="WN_SemanticArgument_56" semanticRole="something">
+                <SemanticLabel label="something" type="selectionalPreference">
+                </SemanticLabel>
+            </SemanticArgument>
+        </SemanticPredicate>
+    </Lexicon>
+</LexicalResource>

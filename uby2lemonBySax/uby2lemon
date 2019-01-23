@@ -1,0 +1,14 @@
+#!/bin/bash
+
+die () {
+    echo >&2 "$@"
+    exit 1
+}
+
+[ "$#" -eq  2 ] || die "Usage: uby2lemon uby.lmf uby.rdf"
+
+if [ ! -d "target/" ]; then
+  mvn install || die "Maven build failed, perhaps Maven is not installed?"
+fi
+
+mvn -q exec:java -Dexec.mainClass="de.citec.uby2lemonbysax.Main" -Dexec.args="$1 $2"

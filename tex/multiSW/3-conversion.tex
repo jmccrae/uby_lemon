@@ -1,0 +1,116 @@
+\section{Comparison of  \emph{lemon} and UBY-LMF}
+%\begin{verbatim}
+%- modeling issues: argument mapping to capture syntactic behavior -> JEK&JM
+%- usage/register information represented differently
+%- lemonUBYlite: where, which license
+%\end{verbatim}
+%The actual conversion  of UBY lexica to \emph{lemon} was achieved by means of
+%an XML style sheet transform~\footnote{The XSL file can be downloaded at
+%\url{https://raw.github.com/jmccrae/lemon.api/master/src/main/resources/xslt/ubylmf2lemon.xsl}}.
+%The following UBY lexica were converted: WordNet, FrameNet, VerbNet, English and German Wiktionary, and the English and German entries of OmegaWiki. 
+%Pairs of these resources are linked at the sense level:
+%there are monolingual links between 
+%VerbNet--FrameNet\footnote{\url{http://verbs.colorado.edu/semlink/}}, 
+%VerbNet--WordNet\footnote{\url{http://verbs.colorado.edu/~mpalmer/projects/verbnet}},
+%WordNet--FrameNet \cite{tonelli-pighin:2009:CoNLL,laparra-rigau:2009:RANLP09}, as well as between WordNet--Wiktionary  \cite{meyer2011what}. Moreover, \emph{lemonUby} provides cross-lingual links between WordNet and the German Ome\-ga\-Wiki \cite{gurevych2012uby}, also including the inter-language links already given in OmegaWiki.
+
+%The resulting resource 
+%\emph{lemonUby} has been published at
+%\url{http://lemon-model.net/lexica/uby}
+%and is available under an open CC-BY-SA license. 
+%The choice of a share-alike
+%license was due to UBY being published under the same license. Statistics for
+%the resources are given in table \ref{triples}\footnote{At the time of
+%submission, en.wiktionary.org resource was not available, we expect to have
+%this ready in time for final publication}.
+%Based on the mapping of UBY-LMF to lemon, we performed a conversion of the following
+%LRs which demonstrate the main parts of a UBY-LMF -- lemon
+%mapping: WordNet, FrameNet, VerbNet, and multilingual OmegaWiki. 
+%These LRs illustrate a number of differences between the two lexicon models in a 
+%prototypical way. First, we will describe differences in the representation of senses, 
+%then we will summarize more general differences that
+%had to be harmonized via a mapping. The actual mapping was achieved by means of
+%an XML stylesheet transform~\footnote{The XSL file can be downloaded at
+%\url{https://raw.github.com/jmccrae/lemon.api/master/src/main/resources/xslt/ubylmf2lemon.xsl}}.
+
+\emph{lemonUby} nicely illustrates how the two lexicon models represent senses in different ways:
+\begin{itemize}
+\item In line with previous authors~\cite{mccrae2012integrating}, synsets in
+  WordNet and OmegaWiki are considered as ontology classes. Hypernym
+  relationships stated in the lexicon are mapped directly to subclass
+  relationships in the ontology. In UBY-LMF, Synset is part of the lexicon.
+%\item Synsets, which are used in WordNet and OmegaWiki, are considered as
+%  entryless senses in \emph{lemon}. Previous
+%  conversions~\cite{mccrae2012integrating} have treated synsets as ontological
+%  classes, however here the 
+\item The semantic predicate in UBY-LMF is used to represent semantic frames from 
+  FrameNet \cite{TUD-CS-2013-0003}; frames consist of senses which evoke the same situation with participants. 
+  Thus, senses in the same semantic frame are semantically related, but not synonymous; 
+  e.g., the verbs {\em love} and {\em hate} are both in the same frame. %Experiencer subj frame
+In \emph{lemon} a 
+{\em broader sense} is used to capture semantic predicates.
+\item VerbNet verb classes and their hierarchical organization correspond to  
+  subcat[egorization] frame set in UBY-LMF. VerbNet classes group verbs that
+share the same syntactic subcategorization frame, semantic roles, selectional
+restrictions, and semantic predicate. Although the resulting verb classes are
+semantically coherent, the semantic relatedness of verb senses in a VerbNet class is much more
+distant that in FrameNet, e.g., the verbs {\em believe}, {\em swear} and {\em doubt} are in the same class.
+%conjecture-29.5-1.
+%semantically related and 
+%  syntactically similar senses; the semantic relatedness of senses in one VerbNet class is much more
+%distant that in FrameNet. 
+Verb classes in \emph{lemon} are represented by a broader sense as well.
+The hierarchic organisation of VerbNet classes is thus lost, but this can be
+reconstructed by means of an axiomatic description of subcategorization frames in
+order to create a hierarchy similar as in the LexInfo linguistic
+ontology~\cite{mccrae2011linking}.
+\item Syntactic behaviour in UBY-LMF mainly provides information on
+subcategorization frames, which are specified by means of syntactic arguments
+with rich morpho-syntactic information attached
+\cite{TUD-CS-2012-0024}.
+SyntacticBehaviour is merely a property instead of a node in \emph{lemon}: in 
+contrast to LMF, there is no need for an explicit link between senses and
+subcategorization frames. Instead this information  can be 
+reconstructed from the \emph{synArg} - \emph{semArg} mapping.
+Lexica which do not specify semantic arguments, e.g., GermaNet \cite{Kunze02},
+must provide a specific annotation to allow this information to be represeneted.
+\item Translations are represented differently. UBY-LMF uses Equivalent for 
+  translations that are not sense-disambiguated \cite{TC32012}, where as
+  \emph{lemon} requires that this link is made at the sense level. In the case
+  where it was not possible to infer the sense, the lexical entries a `stub'
+  lexical entry with a single sense.\footnote{UBY-LMF can also represent sense-disambiguated 
+    translations by means of a sense axis which connects senses from different
+  lexica.}
+\end{itemize}
+%To sum up, 
+Most of the differences between UBY-LMF and \emph{lemon} derive from the fact that 
+\emph{lemon} keeps the lexicon and ontology layers separate. In this way, sense representations in
+\emph{lemon} are more compact compared to the more distributed sense representations in UBY-LMF.
+
+%the separation of  the principal distinction between UBY-LMF and \emph{lemon}the separation of 
+%a principal difference between UBY-LMF and \emph{lemon} is redundant vs. compact  representation of information.
+%For instance, the synset class is merged into the lemon:LexicalSense, while UBY might provide information on
+%synonyms by sense relations of type synonym and by the Synset class (which groups synonymous senses).
+%Since UBY-LMF is populated fully-automatically, the consistency of redundant information can be ensured.
+%An example is SyntacticBehaviour which is not used in \emph{lemon}: while the information to which sense a subcat frame belongs to, can be reconstructed from the \emph{synArg} - \emph{semArg} Mapping, the 
+%relationship between sense and syntactic behaviour can not be recovered for LR which do not specify
+%semantic arguments, e.g., GermaNet.
+
+%\begin{table}
+%  \begin{tabular}{|p{3cm}|c|}
+%    \hline
+%    Resource & Triples \\
+%    \hline
+%    WordNet & 5,102,744 \\
+%    VerbNet & 570,256 \\
+%    FrameNet & 1,110,763 \\
+%    OmegaWiki English & 6,173,515 \\
+%    OmegaWiki German & 5,310,551 \\
+%    Wiktionary German & 4,766,917 \\
+%    \hline
+%    Total & 23,034,746 \\
+%    \hline
+%  \end{tabular}
+%  \caption{Number of triples for each resource\label{triples}}
+%\end{table}
+    

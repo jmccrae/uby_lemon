@@ -1,0 +1,119 @@
+We would like to thank the reviewers for their valuable and very helpful
+feedback. We will respond to the reviews one by one.
+
+
+Response to Tadej Štajner:
+
+>> In order to provide motivation for users of the dataset, I recommend the authors to give some examples of use cases that this dataset enables: for instance, using the same codebase to use various different lexica as interchangeable modules, or providing a common ground for cross-lexicon alignment.
+RESPONSE: We added a section on "Applications of lemonUby" where we give examples of use cases.
+
+
+>> An important piece of information for users of this dataset would be the extent of the cross-dataset mappings: how dense are the links between the lexica, and what are the obvious gaps in connections that future researchers can fill. In line with my previous comment, this would also provide motivation for potential users of this dataset to use lemonUby as a starting point for generating cross-dataset and cross-lingual connections.
+RESPONSE: We added a column in table 1 where we list the number of links available within lemonUby.
+
+I also recommend outlining a strategy for future evolution of the dataset. As it stands now, the current goals are aligned towards representing annotated corpora with this model, but it would also be beneficial to provide directions for improvement of the dataset itself.
+RESPONSE: We outlined possible directions for future research in section 7 (Conclusion and Outlook).
+
+Minor points:
+>> The abstract and conclusion state that the dataset is 'significantly linked'. If this characteristic has a specific definition (when is linkage 'significant'?), I recommend defining it explicitly.
+RESPONSE: We deleted 'significantly linked' and give statistics of the links in table 1 and 2.
+
+>> Having a link to the dataset on the first page would make it friendly for readers.
+RESPONSE: We added a link to the dataset on the first page.
+
+=== Additions ===
+
+>> The dataset has potential for use, but it should be more explicitly justified, possibly with examples. 
+>> Within linked data, one example use case could be generating new cross-lingual and cross-dataset lexicon instance links
+>> using lemonUby for bootstrapping. Also, it should describe the contribution of the dataset
+>> from the perspective of terminology management.
+RESPONSE: We added a possible contribution of the dataset from the perspective of terminology management in section 6.
+
+=======================================
+
+Response to Vojtěch Svátek:
+
+>> There is, however, still space for improvement. Most notably, I miss:
+>> - A concrete proposal (if not tangible experience) on usefulness of the created dataset for a practical application, with added value compared to pre-existing datasets. There is only one sentence on lexicalizing relational knowledge using verbs, on the first page.
+RESPONSE: We added a section on "Applications of lemonUby" where we give examples of use cases. Investigating the usefulness of lemonUby as a linked lexical resource
+for practical applications will be addressed in future work.
+
+>> - Most of the paper is devoted to the process of creation of the resource. While this is in a way desirable, in the sense of giving credibility to the artifact, the description of lemonUby 'as is' is perhaps too parsimonious - just the second para of Section 4, and the brief statistics in Table 1.
+RESPONSE: We considerably extended the description of lemonUby 'as is' by adding a section about ubyCat.owl (sec. 4.1) which defines the 
+data structures and data categories used in lemonUby.
+
+>> - For a semantic web journal, the paper is too abundant in details that only lexicographers could possibly appreciate, at places. 
+RESPONSE: We shortened the sections which discuss lexicographic details (section 4.2).
+
+>> On the other hand, I miss concrete examples (real data fragments) illustrating the challenging aspects of the UBY - lemon mapping.
+RESPONSE: We describe the challenging aspects of the UBY - lemon mapping in section 4, but can not give real data fragments due to space constraints.
+
+>> - As the process of building lemonUBY involved heuristic linking, I would expect some kind of precision analysis, even if on a small sample only.
+RESPONSE: For links that are provided by UBY, a precision analysis is contained in the UBY publications (see references at the beginning of sec. 4.2).
+For newly established links, a note on the quality has been included in section 5.2.
+
+>> In the title I somewhat miss the word 'lexical', such as '...syntactically rich lexical resource for ontologies'.
+RESPONSE: We changed the title accordingly.
+
+>> In the list of contributions in the end of Section 1, I don't understand what (i) refers to.
+RESPONSE: The contributions have been rephrased accordingly.
+
+>> Typographically, the final published version should be improved. There are some weird sentences, missing/spare blanks, commas, mixing of capitalization (UBY vs. Uby), etc.
+RESPONSE: We revised the paper typographically.
+
+======================================================
+
+Response to Fabian M. Suchanek:
+
+>> Since both the Lemon model and the UBY resource have been published before in scientific venues, it would be good if the paper said clearly that it does not contribute new data, but rather previously published data in a more convenient format. The current introduction reads (in the last paragraph in item (i)) as if the paper provided new data.
+RESPONSE: The contributions have been rephrased accordingly.
+
+>> In this spirit, I am wondering to what degree provenance information is encoded in the resulting dataset. 
+>> It would be good to have a reference to the original sources for attribution purposes also in machine-readable form. 
+>> I am thinking of something like "lemon:originatesFrom ", plus a minimal RDF-based description of WordNet. Would that be reasonable and possible? Is there a license embedded in the RDF?
+RESPONSE: References to the original data are given in lemonUby (and in UBY as well) as MonolingualExternalRef which is accessible via the sense.
+
+>> Since the LMF/Lemon schema is quite complex for users that are not in the domain, could the authors give some examples of usage? For example, given a word and a language, how do I find its description? Or: Given a word, how can I find its senses in different languages?
+RESPONSE: We will give exmaples of SPARQL queries on the website.
+
+>> Concerning the resource itself, I would have the following questions:
+>> * some uby:XXX identifiers appear to be undefined in http://lemon-model.net/lexica/uby, for example
+RESPONSE: The links point to ubyCat.owl now where the data categories from UBY-LMF are defined.
+
+>> * the generated RDF makes heavy use of blank nodes. Would it make sense to have explicit URIs instead, so that clients can refer more easily to lemon:Form-nodes?
+RESPONSE: We fixed that.
+
+>> * what is the purpose of uby:index?
+RESPONSE: this is explained in ubyCat.owl now (as a comment)
+
+>> * what is the difference between a "sense" and a "synset" in the WordNet part of the resource? Would it make sense to unify these two concepts?
+RESPONSE: In WordNet, synonymous senses are grouped into Synets. WordNet Synsets have glosses (i.e. definitions of their meaning). However, only for senses, WordNet 
+gives example sentences. Therefore, we would loose information when these two concepts would be unified. See also http://code.google.com/p/uby/wiki/UbyFAQ
+
+>> * what is "uby:semanticLabel"?
+RESPONSE: this is explained in ubyCat.owl now (as a comment)
+
+>> * known shortcomings of the dataset
+>> -> The paper does not discuss such shortcomings. The authors are invited to add such information.
+RESPONSE: We added information about missing sense links within lemonUby for the German Wiktionary.
+
+>> As a side remark, the paper has 7 pages, even though the call for papers requires 4-6 pages. The editors have told me that this is not a problem, but it would be good to keep an eye on the length for future versions.
+RESPONSE: We considerably shortened several sections.
+
+>> How does the proposed work compare with the Lexvo initiative? (http://www.lexvo.org/) Their page says "Lexvo.org brings information about languages, words, characters, and other human language-related entities to the Linked Data Web and Semantic Web.". They also provide WordNet in the form of linked data, and provide URIs for words in different languages, characters, etc.
+RESPONSE: We added a reference to Lexvo in the introduction, but do not discuss it due to space constraints.
+Lexvo focusses on multilingual/translation information, but does not provide detailed lexical-syntactic information as lemonUby does.
+
+===============
+
+Responses to comments regarding the website: The website is not final yet. We will address all the issues raised.
+In particular, we will add some more detailed human-readable information about the original datasets, 
+a license on the starting page, information about the creators of the dataset and examples of SPARQL queries.
+
+
+
+
+
+
+
+
